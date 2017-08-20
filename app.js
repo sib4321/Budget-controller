@@ -14,7 +14,6 @@ var budgetController = (function () {
         } else {
             this.percentage = -1;
         }
-
     };
 
     Expense.prototype.getPercentage = function () {
@@ -61,7 +60,6 @@ var budgetController = (function () {
                 ID = 0;
             }
 
-
             // Create new item based on 'inc' or 'exp' type
             if (type === 'exp') {
                 newItem = new Expense(ID, des, val);
@@ -83,7 +81,7 @@ var budgetController = (function () {
             //data.allItems[type][id];
             //ids = [1 2 4 6 8]
             //index = 3
-            
+
             ids = data.allItems[type].map(function (current) {
                return current.id;
             });
@@ -151,9 +149,6 @@ var budgetController = (function () {
     };
 
 })();
-
-
-
 
 //UI Controller
 var UIController = (function () {
@@ -224,7 +219,6 @@ var UIController = (function () {
                 element = DOMstrings.expensesContainer;
                 html = '<div class="item clearfix" id="exp-%id%"> <div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
             }
-
 
             // Replace the placeholder text with some actual data
             newHtml = html.replace('%id%', obj.id);
@@ -405,7 +399,6 @@ var controller = (function (budgerCtrl, UICtrl) {
             updatePercentages();
 
         }
-
     };
 
     return {
